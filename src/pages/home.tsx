@@ -11,6 +11,9 @@ export default function HomePage() {
           <CardTitle>ระบบลงทะเบียนเรียน CPE & ISNE</CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
+          <Button render={<Link to="/admin/courses" />}>
+            ไปหน้าจัดการวิชาเรียน
+          </Button>
           <Button render={<Link to="/admin/enrollments" />}>
             ไปหน้าจัดการการลงทะเบียน
           </Button>

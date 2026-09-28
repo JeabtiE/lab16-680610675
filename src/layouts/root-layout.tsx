@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
 
 import { AppSidebar } from "@/components/app-sidebar";
+import { Footer } from "@/components/footer";
 import { ModeToggle } from "@/components/mode-toggle";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -8,6 +9,10 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+
+const FIRST_NAME = "Nattapat";
+const LAST_NAME = "Srirung";
+const STUDENT_ID = "680610675";
 
 export default function RootLayout() {
   return (
@@ -18,14 +23,18 @@ export default function RootLayout() {
           <div className="flex items-center gap-2">
             <SidebarTrigger />
             <Separator orientation="vertical" className="h-4" />
-            <span className="text-sm font-medium">ระบบลงทะเบียนเรียน</span>
+            <span className="text-sm font-medium">จัดการวิชาเรียนและสถานะนักศึกษา</span>
           </div>
           <ModeToggle />
         </header>
         <main className="flex-1 p-4">
           <Outlet />
         </main>
-        <footer className="border-t p-4 text-center text-xs text-muted-foreground"></footer>
+        <Footer
+          firstName={FIRST_NAME}
+          lastName={LAST_NAME}
+          studentId={STUDENT_ID}
+        />
       </SidebarInset>
     </SidebarProvider>
   );
